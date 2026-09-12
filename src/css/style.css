@@ -261,3 +261,27 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
+
+.cart {
+  position: relative;
+}
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: var(--tertiary-color, #a94d3a);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  min-width: 1.4rem;
+  height: 1.4rem;
+  padding: 0 0.3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+.cart-count:empty {
+  display: none;
+}

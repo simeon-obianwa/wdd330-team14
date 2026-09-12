@@ -28,3 +28,28 @@ export function getParam(param) {
   const product = urlParams.get(param);
   return product;
 }
+// render a list of items using a template function
+export function renderListWithTemplate(
+  templateFn,
+  parentElement,
+  list,
+  position = "afterbegin",
+  clear = false,
+) {
+  const htmlStrings = list.map(templateFn);
+  if (clear) {
+    parentElement.innerHTML = "";
+  }
+  parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
+}
+// update the cart count badge in the header
+export function renderCartCount() {
+  const cartItems = getLocalStorage("so-cart") || [];
+  const countElement = document.querySelector("#cart-count");
+  if (!countElement) return;
+  if (cartItems.length > 0) {
+    countElement.textContent = cartItems.length;
+  } else {
+    countElement.textContent = "";
+  }
+}
