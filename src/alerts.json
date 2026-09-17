@@ -1,0 +1,12 @@
+[
+    {
+        "message": "Special Promo: Save 20% on all tents this weekend!",
+        "background": "#d9534f",
+        "color": "#ffffff"
+    },
+    {
+        "message": "Free shipping on orders over $50.",
+        "background": "#337ab7",
+        "color": "#ffffff"
+    }
+]
