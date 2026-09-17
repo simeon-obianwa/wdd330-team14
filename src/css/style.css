@@ -285,3 +285,25 @@ footer {
 .cart-count:empty {
   display: none;
 }
+.category-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.category-list li {
+  flex: 1 1 120px;
+  max-width: 160px;
+  text-align: center;
+}
+.category-list img {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+}
+.category-list a {
+  text-decoration: none;
+  color: inherit;
+}
