@@ -1,6 +1,6 @@
 import ProductData from "./ProductData.mjs";
 import ProductList from "./ProductList.mjs";
-import Newsletter from "./Newsletter.js";
+import Newsletter from "./newsletter.js";
 import { renderCartCount } from "./utils.mjs";
 import { loadHeaderFooter } from "./utils.mjs";
 
