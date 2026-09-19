@@ -17,3 +17,17 @@ if (listElement) {
 }
 
 renderCartCount();
+
+document.addEventListener("submit", (e) => {
+    if (e.target && e.target.id === "search-form") {
+        e.preventDefault();
+
+        const searchInput = document.getElementById("search-input");
+        const query = searchInput.value.trim();
+
+        if (query) {
+            const encodedQuery = encodeURIComponent(query);
+            window.location.href = `/product_listing/?search=${encodedQuery}`;
+        }
+    }
+});

@@ -1,14 +1,13 @@
 :root {
   --font-body: Arial, Helvetica, sans-serif;
   --font-headline: Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  /* colors */
+
   --primary-color: #f0a868;
   --secondary-color: #525b0f;
   --tertiary-color: #8a470c;
   --light-grey: #d0d0d0;
   --dark-grey: #303030;
 
-  /* sizes */
   --font-base: 18px;
   --small-font: 0.8em;
   --large-font: 1.2em;
@@ -35,6 +34,67 @@ header {
   justify-content: space-between;
   padding: 0.5rem;
 }
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.search-form input[type="search"] {
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--secondary-color);
+  border-radius: 4px 0 0 4px;
+  font-size: 1rem;
+  outline: none;
+  min-width: 200px;
+}
+
+.search-form input[type="search"]:focus {
+  border-color: var(--dark-grey);
+  box-shadow: 0 0 0 2px rgba(48, 48, 48, 0.2);
+}
+
+.search-form button {
+  padding: 0.5rem 0.75rem;
+  background-color: var(--secondary-color);
+  color: white;
+  border: 2px solid var(--secondary-color);
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.search-form button:hover,
+.search-form button:focus {
+  background-color: var(--dark-grey);
+  border-color: var(--dark-grey);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* -------------------------------- */
 
 p {
   padding: 0.75rem;
@@ -90,11 +150,10 @@ p {
   margin-top: -1.3em;
 }
 
-.logo--square > div {
+.logo--square>div {
   margin-top: -1.7em;
 }
 
-/* utility classes */
 .highlight {
   color: var(--tertiary-color);
 }
@@ -114,9 +173,6 @@ button {
   border-bottom: 2px solid var(--primary-color);
 }
 
-/* End utility classes */
-
-/* Cart icon styles */
 .cart {
   padding-top: 1em;
   position: relative;
@@ -130,8 +186,6 @@ button {
 .cart:hover svg {
   fill: gray;
 }
-
-/* End cart icon styles */
 
 .mission {
   position: absolute;
@@ -168,7 +222,6 @@ button {
   color: var(--dark-grey);
 }
 
-/* Styles for product lists */
 .product-card {
   flex: 1 1 45%;
   margin: 0.25em;
@@ -191,8 +244,6 @@ button {
   font-size: 1em;
 }
 
-/* End product list card */
-
 .product-detail {
   padding: 1em;
   max-width: 500px;
@@ -203,12 +254,10 @@ button {
   width: 100%;
 }
 
-/* Start cart list card styles */
 .cart-card {
   display: grid;
   grid-template-columns: 25% auto 15%;
   font-size: var(--small-font);
-  /* max-height: 120px; */
   align-items: center;
 }
 
@@ -262,9 +311,6 @@ footer {
   padding: 1em;
 }
 
-.cart {
-  position: relative;
-}
 .cart-count {
   position: absolute;
   top: -8px;
@@ -282,9 +328,11 @@ footer {
   justify-content: center;
   line-height: 1;
 }
+
 .cart-count:empty {
   display: none;
 }
+
 .category-list {
   list-style: none;
   padding: 0;
@@ -293,16 +341,19 @@ footer {
   justify-content: center;
   gap: 1rem;
 }
+
 .category-list li {
   flex: 1 1 120px;
   max-width: 160px;
   text-align: center;
 }
+
 .category-list img {
   width: 100%;
   max-width: 100px;
   height: auto;
 }
+
 .category-list a {
   text-decoration: none;
   color: inherit;

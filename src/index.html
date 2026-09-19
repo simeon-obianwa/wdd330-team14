@@ -4,13 +4,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Sleep Outside provides quality camping gear including tents, backpacks, and sleeping bags." />
   <title>Sleep Outside | Home</title>
   <link rel="stylesheet" href="/css/style.css" />
   <script type="module" src="/js/main.js"></script>
 </head>
 
 <body>
-  <header id="main-header" class="divider"></header>
+  <header id="main-header" class="divider">
+    <div class="header-controls">
+      
+      <form id="search-form" class="search-form" role="search">
+        <label for="search-input" class="visually-hidden">Search Products</label>
+        <input type="search" id="search-input" name="search" placeholder="Search gear..." required />
+        <button type="submit" aria-label="Submit Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"
+            aria-hidden="true">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+          </svg>
+        </button>
+      </form>
+
+      <div class="cart">
+        <a href="/cart/" aria-label="View Shopping Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true">
+            <path d="M..." /> 
+          </svg>
+          <span class="cart-count"></span>
+        </a>
+      </div>
+    </div>
+  </header>
+
   <main class="divider">
     <div class="hero">
       <img src="/images/banner-sm.jpg" srcset="images/banner-sm.jpg 500w, images/banner.jpg"
@@ -20,9 +47,7 @@
         <div>Sleep<span class="highlight">Outside</span></div>
       </div>
       <div class="mission">
-        <p>
-          Our mission is to provide you with everything you need to sleep
-          outside comfortably at an affordable price.
+        <p>Our mission is to provide you with everything you need to sleep outside comfortably at an affordable price.
         </p>
       </div>
     </div>
