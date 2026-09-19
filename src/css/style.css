@@ -307,3 +307,22 @@ footer {
   text-decoration: none;
   color: inherit;
 }
+.cart-card {
+  position: relative;
+}
+.cart-card__remove {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  cursor: pointer;
+  font-weight: 700;
+  color: #a94d3a;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0.2rem 0.4rem;
+  border-radius: 50%;
+}
+.cart-card__remove:hover {
+  background-color: #a94d3a;
+  color: white;
+}

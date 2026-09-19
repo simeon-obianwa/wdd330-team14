@@ -6,14 +6,14 @@ import { loadHeaderFooter } from "./utils.mjs";
 
 loadHeaderFooter();
 
-const newsletter = new Newsletter('#newsletter-form', '#newsletter-message');
+const newsletter = new Newsletter("#newsletter-form", "#newsletter-message");
 
 const dataSource = new ProductData("tents");
 const listElement = document.querySelector(".product-list");
 
 if (listElement) {
-    const myList = new ProductList("tents", dataSource, listElement);
-    myList.init();
+  const myList = new ProductList("tents", dataSource, listElement);
+  myList.init();
 }
 
 renderCartCount();
