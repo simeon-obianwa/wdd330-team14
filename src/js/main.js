@@ -1,4 +1,4 @@
-import ProductData from "./ProductData.mjs";
+import ExternalServices from "./ExternalServices.mjs";
 import ProductList from "./ProductList.mjs";
 import Newsletter from "./newsletter.js";
 import { renderCartCount } from "./utils.mjs";
@@ -8,7 +8,7 @@ loadHeaderFooter();
 
 const newsletter = new Newsletter("#newsletter-form", "#newsletter-message");
 
-const dataSource = new ProductData("tents");
+const dataSource = new ExternalServices();
 const listElement = document.querySelector(".product-list");
 
 if (listElement) {

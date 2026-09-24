@@ -10,3 +10,16 @@ myCheckout.init();
 document.querySelector("#zip").addEventListener("blur", () => {
   myCheckout.calculateOrderTotal();
 });
+
+// handle the form submission
+document
+  .querySelector("#checkoutForm")
+  .addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    // browser validation: only proceed if all required fields are filled
+    if (form.checkValidity()) {
+      const response = await myCheckout.checkout(form);
+      console.log(response);
+    }
+  });
