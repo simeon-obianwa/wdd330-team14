@@ -81,7 +81,7 @@ export default class CheckoutProcess {
     orderTotal.textContent = this.orderTotal.toFixed(2);
   }
 
-  async checkout(form) {
+   async checkout(form) {
     const order = formDataToJSON(form);
     order.orderDate = new Date().toISOString();
     order.orderTotal = this.orderTotal.toFixed(2);
@@ -89,7 +89,13 @@ export default class CheckoutProcess {
     order.shipping = this.shipping;
     order.items = packageItems(this.list);
 
-    const response = await services.checkout(order);
-    return response;
+    try {
+      const response = await services.checkout(order);
+      console.log(response);
+      return response;
+    } catch (err) {
+      console.log(err);
+      return err;
+    }
   }
 }

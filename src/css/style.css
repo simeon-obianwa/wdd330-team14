@@ -440,3 +440,30 @@ footer {
 .checkout-btn:hover {
   background-color: #8a3d2e;
 }
+.alert {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem auto;
+  max-width: 500px;
+}
+.alert p {
+  margin: 0;
+}
+.alert-close {
+  cursor: pointer;
+  font-weight: 700;
+  padding-left: 1rem;
+}
+.alert--error {
+  background-color: #f8d7da;
+  color: #842029;
+  border: 1px solid #f5c2c7;
+}
+.alert--success {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border: 1px solid #badbcc;
+}

@@ -1,38 +1,40 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sleep Outside | Product Make and Name</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/product.js" type="module"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sleep Outside | Product Make and Name</title>
-  <link rel="stylesheet" href="../css/style.css" />
-  <script src="../js/product.js" type="module"></script>
-</head>
+  <body>
+    <header id="main-header" class="divider"></header>
 
-<body>
-  <header id="main-header" class="divider"></header>
+    <main class="divider">
+      <section class="product-detail">
+        <h3 id="productBrand"></h3>
+        <h2 class="divider" id="productName"></h2>
 
-  <main class="divider">
-    <section class="product-detail">
-      <h3 id="productBrand"></h3>
-      <h2 class="divider" id="productName"></h2>
+        <img class="divider" id="productImage" src="" alt="" />
 
-      <img class="divider" id="productImage" src="" alt="" />
+        <div class="product-price">
+          <p class="product-card__price" id="productPrice"></p>
+          <p
+            class="product__original-price"
+            id="productOriginalPrice"
+            hidden
+          ></p>
+          <p class="product__discount" id="productDiscount" hidden></p>
+        </div>
+        <p class="product__color" id="productColor"></p>
+        <p class="product__description" id="productDesc"></p>
 
-      <div class="product-price">
-        <p class="product-card__price" id="productPrice"></p>
-        <p class="product__original-price" id="productOriginalPrice" hidden></p>
-        <p class="product__discount" id="productDiscount" hidden></p>
-      </div>
-      <p class="product__color" id="productColor"></p>
-      <p class="product__description" id="productDesc"></p>
-
-      <div class="product-detail__add">
-        <button id="addToCart"></button>
-      </div>
-    </section>
-  </main>
-  <footer id="main-footer"></footer>
-</body>
-
+        <div class="product-detail__add">
+          <button id="addToCart"></button>
+        </div>
+      </section>
+    </main>
+    <footer id="main-footer"></footer>
+  </body>
 </html>
