@@ -5,16 +5,23 @@ import { loadHeaderFooter, getParam } from "./utils.mjs";
 loadHeaderFooter();
 
 const category = getParam("category");
+const searchQuery = getParam("search");
+
 const dataSource = new ExternalServices();
 const listElement = document.querySelector(".product-list");
 
-const myList = new ProductList(category, dataSource, listElement);
+const query = category || searchQuery;
+const myList = new ProductList(query, dataSource, listElement);
 myList.init();
 
 const titleElement = document.querySelector(".title");
 if (titleElement) {
-  const readable = category
-    .replace("-", " ")
-    .replace(/\b\w/g, (c) => c.toUpperCase());
-  titleElement.textContent = `Top Products: ${readable}`;
+  if (category) {
+    const readable = category
+      .replace("-", " ")
+      .replace(/\b\w/g, (c) => c.toUpperCase());
+    titleElement.textContent = `Top Products: ${readable}`;
+  } else if (searchQuery) {
+    titleElement.textContent = `Search Results: "${searchQuery}"`;
+  }
 }
