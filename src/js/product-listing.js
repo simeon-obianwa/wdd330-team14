@@ -10,7 +10,9 @@ const searchQuery = getParam("search");
 const dataSource = new ExternalServices();
 const listElement = document.querySelector(".product-list");
 
-const query = category || searchQuery;
+const rawQuery = category || searchQuery;
+const query = rawQuery ? rawQuery.toLowerCase() : "";
+
 const myList = new ProductList(query, dataSource, listElement);
 myList.init();
 

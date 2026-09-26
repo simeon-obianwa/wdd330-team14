@@ -19,8 +19,18 @@ export default class ProductList {
   }
 
   async init() {
-    const list = await this.dataSource.getData(this.category);
-    this.renderList(list);
+    try {
+      const list = await this.dataSource.getData(this.category);
+
+      if (list && list.length > 0) {
+        this.renderList(list);
+      } else {
+        this.listElement.innerHTML = `<p class="error-message" style="grid-column: 1/-1; text-align: center;">No products found for "${this.category}".</p>`;
+      }
+    } catch (error) {
+      console.error("Error fetching products:", error);
+      this.listElement.innerHTML = `<p class="error-message" style="grid-column: 1/-1; text-align: center;">No products found. Please check your spelling or try a category like "tents" or "backpacks".</p>`;
+    }
   }
 
   renderList(list) {
