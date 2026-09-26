@@ -27,3 +27,10 @@ if (titleElement) {
     titleElement.textContent = `Search Results: "${searchQuery}"`;
   }
 }
+
+const sortSelect = document.getElementById("sort-select");
+if (sortSelect) {
+  sortSelect.addEventListener("change", (e) => {
+    myList.sortProducts(e.target.value);
+  });
+}

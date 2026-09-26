@@ -1,21 +1,38 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sleep Outside | Products</title>
-    <link rel="stylesheet" href="/css/style.css" />
-    <script type="module" src="/js/product-listing.js"></script>
-  </head>
 
-  <body>
-    <header id="main-header" class="divider"></header>
-    <main class="divider">
-      <section class="products">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sleep Outside | Products</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <script type="module" src="/js/product-listing.js"></script>
+</head>
+
+<body>
+  <header id="main-header" class="divider"></header>
+  <main class="divider">
+    <section class="products">
+      <div class="products-header"
+        style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
         <h2 class="title">Top Products</h2>
-        <ul class="product-list"></ul>
-      </section>
-    </main>
-    <footer id="main-footer"></footer>
-  </body>
+
+        <div class="sort-container" style="margin-bottom: 10px;">
+          <label for="sort-select">Sort By: </label>
+          <select id="sort-select" style="padding: 5px;">
+            <option value="default">Default</option>
+            <option value="name-asc">Name (A-Z)</option>
+            <option value="name-desc">Name (Z-A)</option>
+            <option value="price-asc">Price (Low to High)</option>
+            <option value="price-desc">Price (High to Low)</option>
+          </select>
+        </div>
+      </div>
+
+      <ul class="product-list"></ul>
+    </section>
+  </main>
+  <footer id="main-footer"></footer>
+</body>
+
 </html>

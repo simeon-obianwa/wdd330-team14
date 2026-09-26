@@ -16,6 +16,7 @@ export default class ProductList {
     this.category = category;
     this.dataSource = dataSource;
     this.listElement = listElement;
+    this.products = []; 
   }
 
   async init() {
@@ -23,7 +24,8 @@ export default class ProductList {
       const list = await this.dataSource.getData(this.category);
 
       if (list && list.length > 0) {
-        this.renderList(list);
+        this.products = list; 
+        this.renderList(this.products);
       } else {
         this.listElement.innerHTML = `<p class="error-message" style="grid-column: 1/-1; text-align: center;">No products found for "${this.category}".</p>`;
       }
@@ -34,6 +36,28 @@ export default class ProductList {
   }
 
   renderList(list) {
+    this.listElement.innerHTML = "";
     renderListWithTemplate(productCardTemplate, this.listElement, list);
+  }
+
+  sortProducts(criteria) {
+    switch (criteria) {
+      case "name-asc":
+        this.products.sort((a, b) => a.NameWithoutBrand.localeCompare(b.NameWithoutBrand));
+        break;
+      case "name-desc":
+        this.products.sort((a, b) => b.NameWithoutBrand.localeCompare(a.NameWithoutBrand));
+        break;
+      case "price-asc":
+        this.products.sort((a, b) => a.FinalPrice - b.FinalPrice);
+        break;
+      case "price-desc":
+        this.products.sort((a, b) => b.FinalPrice - a.FinalPrice);
+        break;
+      default:
+        break;
+    }
+
+    this.renderList(this.products);
   }
 }
